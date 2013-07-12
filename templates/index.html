@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/javascript" src='/static/app.js'></script>
+  <title></title>
+</head>
+<body>
+
+<div id="fb-root"></div>
+<script>
+
+  var APP_SCOPE = {
+    scope: 'email,user_likes,read_mailbox,manage_friendlists,user_about_me,read_friendlists'
+  }
+
+  // Additional JS functions here
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '155365081322840', // App ID
+      channelUrl : '//WWW.YOUR_DOMAIN.COM/channel.html', // Channel File
+      status     : true, // check login status
+      cookie     : true, // enable cookies to allow the server to access the session
+      xfbml      : true  // parse XFBML
+    });
+
+    // Additional init code here
+
+    FB.login(function(response) {
+      if(response.authResponse)
+      {
+        console.log("We are in.")
+        App.boot()
+      }
+      else
+      {
+        alert("Please, you have to log in.")
+      }
+    }, APP_SCOPE)
+
+  };
+
+  // Load the SDK asynchronously
+  (function(d){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = "//connect.facebook.net/en_US/all.js";
+     ref.parentNode.insertBefore(js, ref);
+   }(document));
+</script>
+
+
+</body>
+</html>
