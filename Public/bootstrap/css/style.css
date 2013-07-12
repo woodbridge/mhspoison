@@ -1,0 +1,15 @@
+#welcomecontainer
+{
+	padding-top: 230px;	
+}
+#welcometext
+{
+	font-size: 100px;
+	padding-bottom: 20px;
+}
+#welcomebutton
+{
+	width: 300px;
+	font-size: 30px;
+	height: 30px;
+}
